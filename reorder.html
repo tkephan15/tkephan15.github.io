@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reorder – Nail Supply HQ</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.reorder-hero{background:linear-gradient(140deg,#fff5f9,#fce4ee);padding:52px 0}
+.reorder-tabs{display:flex;gap:0;border:1px solid var(--gray-200);border-radius:9px;overflow:hidden;width:fit-content;margin-bottom:32px}
+.rtab{padding:10px 24px;font-size:13px;font-weight:600;cursor:pointer;background:white;border:none;font-family:var(--font);color:var(--gray-text);transition:all .15s;border-right:1px solid var(--gray-200)}
+.rtab:last-child{border-right:none}
+.rtab.active{background:var(--pink);color:white}
+.reorder-product-row{display:flex;align-items:center;gap:16px;padding:16px;border:1px solid var(--gray-200);border-radius:var(--radius-lg);background:white;margin-bottom:10px;transition:all .2s}
+.reorder-product-row:hover{border-color:var(--pink-light);box-shadow:var(--shadow-sm)}
+.rpr-img{width:60px;height:60px;border-radius:8px;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.rpr-info{flex:1}
+.rpr-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.rpr-detail{font-size:11.5px;color:var(--gray-text)}
+.rpr-date{font-size:11px;color:var(--gray-text);white-space:nowrap}
+.rpr-price{font-size:15px;font-weight:800;color:var(--black);white-space:nowrap;margin-right:8px}
+.reorder-btn{background:var(--pink);color:white;border:none;padding:9px 18px;border-radius:7px;font-family:var(--font);font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .15s}
+.reorder-btn:hover{background:var(--pink-hover)}
+.saved-list-card{background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px}
+.slc-head{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-200);background:var(--gray-100)}
+.slc-name{font-size:13px;font-weight:700}
+.slc-count{font-size:11px;color:var(--gray-text);margin-top:2px}
+.slc-body{padding:12px 20px}
+.slc-item{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-200);font-size:12.5px}
+.slc-item:last-child{border-bottom:none}
+.restock-reminder-banner{background:var(--black);border-radius:var(--radius-lg);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:40px}
+.rrb-title{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;margin-bottom:4px}
+.rrb-title span{color:var(--pink)}
+.rrb-sub{font-size:13px;color:rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+<div class="announce-bar">🚚 Free local delivery on orders $100+<span>|</span>Professional salon supplies<span>|</span>Easy monthly restock</div>
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="logo"><div class="logo-mark">Nail<em>HQ</em></div><div class="logo-tag">Pro Salon Supply &amp; Delivery</div></a>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="restock-plans.html">Restock Plans</a><a href="pro-account.html">Pro Account</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div class="header-right"><button class="icon-btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg></button><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button><div class="cart-wrap"><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button><span class="cart-badge">3</span></div></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="reorder-hero">
+  <div class="page-wrap">
+    <div class="sec-label">Quick Reorder</div>
+    <h1 class="sec-title" style="margin-bottom:8px">Reorder in <span>Seconds</span></h1>
+    <p class="sec-sub" style="margin-bottom:0">Your time is valuable. Reorder your most-used items quickly and keep your salon stocked.</p>
+  </div>
+</div>
+
+<section class="padded">
+  <div class="page-wrap">
+    <div class="reorder-tabs">
+      <button class="rtab active">Order Again</button>
+      <button class="rtab">Saved Lists</button>
+      <button class="rtab">Frequently Restocked</button>
+    </div>
+
+    <!-- ORDER AGAIN -->
+    <div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+        <h3 style="font-size:16px;font-weight:700">Recently Ordered</h3>
+        <button class="btn btn-pink btn-sm">Reorder All Items →</button>
+      </div>
+
+      <div class="reorder-product-row">
+        <div class="rpr-img">🧤</div>
+        <div class="rpr-info"><div class="rpr-name">Nitrile Gloves Black</div><div class="rpr-detail">100 Count · Last ordered May 18, 2024</div></div>
+        <div class="rpr-date">2 weeks ago</div>
+        <div class="rpr-price">$6.99</div>
+        <button class="reorder-btn">Reorder</button>
+      </div>
+      <div class="reorder-product-row">
+        <div class="rpr-img">🧴</div>
+        <div class="rpr-info"><div class="rpr-name">Acetone (100% Pure) Gallon</div><div class="rpr-detail">1 Gallon · Last ordered May 18, 2024</div></div>
+        <div class="rpr-date">2 weeks ago</div>
+        <div class="rpr-price">$24.99</div>
+        <button class="reorder-btn">Reorder</button>
+      </div>
+      <div class="reorder-product-row">
+        <div class="rpr-img">🧻</div>
+        <div class="rpr-info"><div class="rpr-name">Lint-Free Nail Wipes</div><div class="rpr-detail">900 Count · Last ordered May 18, 2024</div></div>
+        <div class="rpr-date">2 weeks ago</div>
+        <div class="rpr-price">$5.99</div>
+        <button class="reorder-btn">Reorder</button>
+      </div>
+      <div class="reorder-product-row">
+        <div class="rpr-img">🪄</div>
+        <div class="rpr-info"><div class="rpr-name">Zebra Nail Files 100/180</div><div class="rpr-detail">50 Pack · Last ordered Apr 30, 2024</div></div>
+        <div class="rpr-date">1 month ago</div>
+        <div class="rpr-price">$7.99</div>
+        <button class="reorder-btn">Reorder</button>
+      </div>
+      <div class="reorder-product-row">
+        <div class="rpr-img">🛁</div>
+        <div class="rpr-info"><div class="rpr-name">Pedicure Liners</div><div class="rpr-detail">125 Count · Last ordered Apr 30, 2024</div></div>
+        <div class="rpr-date">1 month ago</div>
+        <div class="rpr-price">$9.99</div>
+        <button class="reorder-btn">Reorder</button>
+      </div>
+      <div class="reorder-product-row">
+        <div class="rpr-img">💅</div>
+        <div class="rpr-info"><div class="rpr-name">Gel Top Coat No-Wipe</div><div class="rpr-detail">15ml · Last ordered Apr 12, 2024</div></div>
+        <div class="rpr-date">6 weeks ago</div>
+        <div class="rpr-price">$8.99</div>
+        <button class="reorder-btn">Reorder</button>
+      </div>
+    </div>
+
+    <!-- SAVED LISTS (hidden by default, show via JS) -->
+    <div id="saved-lists" style="display:none">
+      <div class="saved-list-card">
+        <div class="slc-head"><div><div class="slc-name">My Monthly Essentials</div><div class="slc-count">7 items · Last updated May 10, 2024</div></div><button class="reorder-btn">Reorder All</button></div>
+        <div class="slc-body">
+          <div class="slc-item"><span>Nitrile Gloves Black (100ct)</span><span style="font-weight:700">$6.99</span></div>
+          <div class="slc-item"><span>Acetone Gallon</span><span style="font-weight:700">$24.99</span></div>
+          <div class="slc-item"><span>Lint-Free Wipes (900ct)</span><span style="font-weight:700">$5.99</span></div>
+          <div class="slc-item"><span>Nail Files 50-Pack</span><span style="font-weight:700">$7.99</span></div>
+          <div class="slc-item" style="border:none;padding-top:8px;color:var(--gray-text)">+3 more items</div>
+        </div>
+      </div>
+      <div class="saved-list-card">
+        <div class="slc-head"><div><div class="slc-name">Pedi Supplies</div><div class="slc-count">4 items · Last updated Apr 22, 2024</div></div><button class="reorder-btn">Reorder All</button></div>
+        <div class="slc-body">
+          <div class="slc-item"><span>Pedicure Liners (125ct)</span><span style="font-weight:700">$9.99</span></div>
+          <div class="slc-item"><span>Disposable Towels</span><span style="font-weight:700">$12.99</span></div>
+          <div class="slc-item"><span>Cuticle Oil 15ml</span><span style="font-weight:700">$5.99</span></div>
+          <div class="slc-item"><span>Nail Buffer 100/180</span><span style="font-weight:700">$4.99</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESTOCK REMINDER BANNER -->
+    <div class="restock-reminder-banner">
+      <div>
+        <div class="rrb-title">Never Run Low on <span>Essentials</span></div>
+        <div class="rrb-sub">Set up a monthly reorder reminder and we'll email you when it's time to restock.</div>
+      </div>
+      <div style="display:flex;gap:12px">
+        <a href="restock-plans.html" class="btn btn-pink">Build a Restock Plan</a>
+        <a href="#" class="btn btn-outline-pink">Set Reminder</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div><div class="footer-brand-logo">Nail<em>HQ</em></div><span class="footer-brand-tag">Pro Salon Supply &amp; Delivery</span><p class="footer-desc">Your one-stop shop for professional salon supplies.</p><div class="footer-socials"><button class="social-btn">𝕏</button><button class="social-btn">f</button><button class="social-btn">▶</button><button class="social-btn">📸</button></div></div>
+    <div><div class="footer-col-hd">Shop</div><div class="footer-links"><a href="shop.html">All Products</a><a href="new-arrivals.html">New Arrivals</a><a href="shop.html">Best Sellers</a><a href="restock-plans.html">Restock Plans</a></div></div>
+    <div><div class="footer-col-hd">Customer Care</div><div class="footer-links"><a href="contact.html">Contact Us</a><a href="local-delivery.html">Delivery</a><a href="#">Returns</a><a href="#">FAQ</a></div></div>
+    <div><div class="footer-col-hd">Newsletter</div><div class="nl-input-row"><input type="email" class="nl-input" placeholder="Your email"><button class="nl-btn">Subscribe</button></div><div class="nl-note">No spam. Unsubscribe anytime.</div></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-copy">© 2024 Nail Supply HQ. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div><div class="pay-icons"><span class="pay-pill">VISA</span><span class="pay-pill">MC</span><span class="pay-pill">AMEX</span><span class="pay-pill">Apple Pay</span></div></div>
+</footer>
+<script>
+document.querySelectorAll('.rtab').forEach((tab,i)=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('saved-lists').style.display = (i===1)?'block':'none';
+  });
+});
+</script>
+</body>
+</html>

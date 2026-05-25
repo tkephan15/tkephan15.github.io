@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – Nail Supply HQ</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.about-hero{background:var(--black);padding:80px 0;position:relative;overflow:hidden}
+.about-hero::after{content:'';position:absolute;left:-150px;bottom:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,128,.1),transparent 65%)}
+.about-hero-wrap{max-width:1360px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-hero h1{font-size:50px;font-weight:900;letter-spacing:-2.5px;line-height:1.08;color:white;margin-bottom:14px}
+.about-hero h1 span{color:var(--pink)}
+.about-hero p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:24px}
+.about-img-mock{background:linear-gradient(135deg,#200b14,#380d1e);border-radius:18px;height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;z-index:2}
+.aim-logo{font-size:28px;font-weight:900;color:white;letter-spacing:-1px}
+.aim-logo em{font-style:normal;color:var(--pink)}
+.aim-tag{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.aim-badge{background:var(--pink);color:white;font-size:11px;font-weight:700;padding:8px 20px;border-radius:22px;letter-spacing:.5px}
+.mission-section{background:var(--blush)}
+.mission-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.mission-quote{font-size:24px;font-weight:700;line-height:1.5;letter-spacing:-.5px;color:var(--black);position:relative;padding-left:24px}
+.mission-quote::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--pink);border-radius:2px}
+.mission-text{font-size:14px;color:#555;line-height:1.8}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.diff-card{border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;transition:all .2s}
+.diff-card:hover{border-color:var(--pink);box-shadow:0 4px 24px rgba(255,0,128,.08)}
+.diff-icon{font-size:30px;margin-bottom:12px}
+.diff-title{font-size:14px;font-weight:700;margin-bottom:7px}
+.diff-desc{font-size:13px;color:#555;line-height:1.7}
+.stats-band{background:var(--black);border-radius:18px;overflow:hidden}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-cell{padding:40px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.stat-cell:last-child{border-right:none}
+.stat-n{font-size:48px;font-weight:900;letter-spacing:-3px;color:var(--pink);line-height:1}
+.stat-l{font-size:13px;font-weight:600;color:white;margin-top:6px}
+.stat-s{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px}
+.team-quote{background:var(--blush);border-radius:18px;padding:56px;text-align:center}
+.tq-text{font-size:22px;font-weight:700;line-height:1.55;letter-spacing:-.5px;color:var(--black);max-width:680px;margin:0 auto 20px}
+.tq-author{font-size:13px;font-weight:600;color:var(--gray-text)}
+.tq-author span{color:var(--pink)}
+</style>
+</head>
+<body>
+<div class="announce-bar">🚚 Free local delivery on orders $100+<span>|</span>Professional salon supplies<span>|</span>Easy monthly restock</div>
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="logo"><div class="logo-mark">Nail<em>HQ</em></div><div class="logo-tag">Pro Salon Supply &amp; Delivery</div></a>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="restock-plans.html">Restock Plans</a><a href="pro-account.html">Pro Account</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a></nav>
+    <div class="header-right"><button class="icon-btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg></button><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button><div class="cart-wrap"><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button><span class="cart-badge">3</span></div></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="about-hero-wrap">
+    <div style="position:relative;z-index:2">
+      <div class="sec-label" style="color:var(--pink)">About Nail Supply HQ</div>
+      <h1>Built for Nail Techs.<br><span>By People Who Get It.</span></h1>
+      <p>Nail Supply HQ was created to make restocking your salon simple, affordable, and stress-free. We know your time is valuable — that's why we bring the supplies you use every day straight to you.</p>
+      <p style="color:rgba(255,255,255,.6);font-size:14px;line-height:1.75">Quality products. Fair prices. Real support. That's our promise.</p>
+    </div>
+    <div class="about-img-mock">
+      <div class="aim-logo">Nail<em>HQ</em></div>
+      <div class="aim-tag">Pro Salon Supply &amp; Delivery</div>
+      <div style="margin:12px 0;font-size:32px">💅</div>
+      <div class="aim-badge">Austin, Texas</div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section class="padded mission-section">
+  <div class="page-wrap">
+    <div class="mission-wrap">
+      <div>
+        <div class="sec-label">Our Mission</div>
+        <h2 class="sec-title" style="margin-bottom:18px">We exist to make<br>salon life <span>easier.</span></h2>
+        <p class="mission-text">Every nail tech and salon owner we've talked to has the same frustration: supply runs take too long, products run out at the worst times, and ordering from five different suppliers is a headache. We built Nail Supply HQ to fix all of that.</p>
+        <p class="mission-text" style="margin-top:14px">We source the professional products salons actually use every day — the essentials, not the fluff — and we deliver them fast, affordably, and on a schedule that works for your business.</p>
+      </div>
+      <div>
+        <div class="mission-quote">"Your time is better spent behind the table, not chasing down supplies. We handle the restocking so you can focus on your clients."</div>
+        <p style="font-size:12px;color:var(--gray-text);margin-top:16px;font-weight:600">— The Nail Supply HQ Team, Austin TX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="padded">
+  <div class="page-wrap">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-label">Why Choose Us</div>
+      <h2 class="sec-title">What Makes Us <span>Different</span></h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><div class="diff-icon">🎯</div><div class="diff-title">Built for Professionals</div><div class="diff-desc">We stock what salons actually use — not trendy gimmicks. Every product is tested and salon-approved before we carry it.</div></div>
+      <div class="diff-card"><div class="diff-icon">🚚</div><div class="diff-title">Local Delivery That's Actually Local</div><div class="diff-desc">We're based in Austin, TX and offer same-day and next-day delivery to local salons. No warehouse delays, no third-party guesswork.</div></div>
+      <div class="diff-card"><div class="diff-icon">🔄</div><div class="diff-title">Restock Is Our Thing</div><div class="diff-desc">Our subscription restock plans are designed around how salons actually consume supplies — not generic subscription boxes.</div></div>
+      <div class="diff-card"><div class="diff-icon">💰</div><div class="diff-title">Fair Pro Pricing</div><div class="diff-desc">Pro account holders get wholesale-level pricing without minimum order requirements. No hoops, just savings.</div></div>
+      <div class="diff-card"><div class="diff-icon">📞</div><div class="diff-title">Real Customer Support</div><div class="diff-desc">Reach us by phone, email, or text. We respond fast because we know you can't wait two days for an answer when you're out of acetone.</div></div>
+      <div class="diff-card"><div class="diff-icon">✨</div><div class="diff-title">Trending Products Too</div><div class="diff-desc">From Korean syrup gels to Japanese nail art tools, we bring the latest trends to your salon without the import headache.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:0 0 72px">
+  <div class="page-wrap">
+    <div class="stats-band">
+      <div class="stats-grid">
+        <div class="stat-cell"><div class="stat-n">1,000+</div><div class="stat-l">Products Available</div><div class="stat-s">And growing monthly</div></div>
+        <div class="stat-cell"><div class="stat-n">500+</div><div class="stat-l">Salons Restocked</div><div class="stat-s">Across Austin &amp; beyond</div></div>
+        <div class="stat-cell"><div class="stat-n">100%</div><div class="stat-l">Online Ordering</div><div class="stat-s">Available 24/7</div></div>
+        <div class="stat-cell"><div class="stat-n">99%</div><div class="stat-l">Customer Satisfaction</div><div class="stat-s">Based on reviews</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM QUOTE -->
+<section style="padding:0 0 72px">
+  <div class="page-wrap">
+    <div class="team-quote">
+      <div class="tq-text">"We're not just a supplier. We're a partner in your salon's success — here to make sure you never run out of what you need to do your best work."</div>
+      <div class="tq-author">Nail Supply HQ · <span>Austin, Texas</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div><div class="footer-brand-logo">Nail<em>HQ</em></div><span class="footer-brand-tag">Pro Salon Supply &amp; Delivery</span><p class="footer-desc">Your one-stop shop for professional salon supplies. Quality products, fast shipping, and support you can count on.</p><div class="footer-socials"><button class="social-btn">𝕏</button><button class="social-btn">f</button><button class="social-btn">▶</button><button class="social-btn">📸</button></div></div>
+    <div><div class="footer-col-hd">Shop</div><div class="footer-links"><a href="shop.html">All Products</a><a href="new-arrivals.html">New Arrivals</a><a href="shop.html">Best Sellers</a><a href="restock-plans.html">Restock Plans</a></div></div>
+    <div><div class="footer-col-hd">Customer Care</div><div class="footer-links"><a href="contact.html">Contact Us</a><a href="local-delivery.html">Delivery</a><a href="#">Returns</a><a href="#">FAQ</a></div></div>
+    <div><div class="footer-col-hd">Newsletter</div><div class="nl-input-row"><input type="email" class="nl-input" placeholder="Your email"><button class="nl-btn">Subscribe</button></div><div class="nl-note">No spam. Unsubscribe anytime.</div></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-copy">© 2024 Nail Supply HQ. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div><div class="pay-icons"><span class="pay-pill">VISA</span><span class="pay-pill">MC</span><span class="pay-pill">AMEX</span><span class="pay-pill">Apple Pay</span></div></div>
+</footer>
+</body>
+</html>

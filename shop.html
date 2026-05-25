@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All Products – Nail Supply HQ</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.shop-layout{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+.sidebar{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px;position:sticky;top:90px}
+.filter-section{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--gray-200)}
+.filter-section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.filter-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--black);margin-bottom:12px}
+.filter-options{display:flex;flex-direction:column;gap:8px}
+.filter-opt{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#444;cursor:pointer}
+.filter-opt input{accent-color:var(--pink)}
+.filter-opt:hover{color:var(--pink)}
+.price-range{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--gray-text)}
+.price-range input{width:72px;padding:6px 8px;border:1px solid var(--gray-300);border-radius:5px;font-size:12px;font-family:var(--font)}
+.shop-main{}
+.shop-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:12px}
+.shop-search{flex:1;max-width:300px;position:relative}
+.shop-search input{width:100%;padding:10px 14px 10px 38px;border:1px solid var(--gray-300);border-radius:7px;font-family:var(--font);font-size:13px;outline:none}
+.shop-search input:focus{border-color:var(--pink)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--gray-400)}
+.shop-toolbar-right{display:flex;align-items:center;gap:12px}
+.sort-select{padding:10px 14px;border:1px solid var(--gray-300);border-radius:7px;font-family:var(--font);font-size:13px;outline:none;background:white;cursor:pointer}
+.sort-select:focus{border-color:var(--pink)}
+.results-count{font-size:12.5px;color:var(--gray-text)}
+.restock-bottom-banner{background:var(--black);border-radius:var(--radius-lg);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;margin-top:40px;gap:24px}
+.rbb-left h3{font-size:22px;font-weight:800;letter-spacing:-1px;color:white;margin-bottom:4px}
+.rbb-left h3 em{font-style:normal;color:var(--pink)}
+.rbb-left p{font-size:13px;color:rgba(255,255,255,.55)}
+.pagination{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:36px}
+.page-btn{width:34px;height:34px;border-radius:7px;border:1px solid var(--gray-300);background:white;font-family:var(--font);font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.page-btn:hover,.page-btn.active{background:var(--pink);color:white;border-color:var(--pink)}
+.active-filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.filter-tag{background:var(--blush);color:var(--pink);font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:4px;cursor:pointer}
+.filter-tag:hover{background:var(--blush-mid)}
+</style>
+</head>
+<body>
+<div class="announce-bar">🚚 Free local delivery on orders $100+<span>|</span>Professional salon supplies<span>|</span>Easy monthly restock</div>
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="logo"><div class="logo-mark">Nail<em>HQ</em></div><div class="logo-tag">Pro Salon Supply &amp; Delivery</div></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a><a href="shop.html" class="active">Shop</a><a href="restock-plans.html">Restock Plans</a><a href="pro-account.html">Pro Account</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+      <button class="icon-btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg></button>
+      <button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <div class="cart-wrap"><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button><span class="cart-badge">3</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero-sm">
+  <div class="page-wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Shop</span></div>
+    <h1 class="sec-title">Shop All <span>Products</span></h1>
+    <p class="sec-sub">Professional nail supplies for salons, nail techs, and beauty professionals.</p>
+  </div>
+</div>
+
+<section class="padded">
+  <div class="page-wrap">
+    <div class="shop-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <span style="font-size:13px;font-weight:700">Filters</span>
+          <a href="#" style="font-size:11px;color:var(--pink);font-weight:600">Clear all</a>
+        </div>
+        <div class="filter-section">
+          <div class="filter-title">Category</div>
+          <div class="filter-options">
+            <label class="filter-opt"><input type="checkbox" checked>Gel Polish</label>
+            <label class="filter-opt"><input type="checkbox">Acrylic Systems</label>
+            <label class="filter-opt"><input type="checkbox">Nail Tools</label>
+            <label class="filter-opt"><input type="checkbox">Liquids &amp; Chemicals</label>
+            <label class="filter-opt"><input type="checkbox">Pedicure Supplies</label>
+            <label class="filter-opt"><input type="checkbox">Disposables</label>
+            <label class="filter-opt"><input type="checkbox">Nail Art &amp; Accessories</label>
+            <label class="filter-opt"><input type="checkbox">New Arrivals</label>
+          </div>
+        </div>
+        <div class="filter-section">
+          <div class="filter-title">Brand</div>
+          <div class="filter-options">
+            <label class="filter-opt"><input type="checkbox">All Brands</label>
+            <label class="filter-opt"><input type="checkbox">The Gellette Inc.</label>
+            <label class="filter-opt"><input type="checkbox">Bio Seaweed Gel</label>
+            <label class="filter-opt"><input type="checkbox">Nail Supply HQ</label>
+          </div>
+        </div>
+        <div class="filter-section">
+          <div class="filter-title">Price Range</div>
+          <div class="price-range">$<input type="number" placeholder="0" value="0"> — $<input type="number" placeholder="150" value="150"></div>
+          <input type="range" min="0" max="200" value="150" style="width:100%;margin-top:12px;accent-color:var(--pink)">
+        </div>
+        <div class="filter-section">
+          <div class="filter-title">Product Type</div>
+          <div class="filter-options">
+            <label class="filter-opt"><input type="checkbox">Bottles</label>
+            <label class="filter-opt"><input type="checkbox">Boxes</label>
+            <label class="filter-opt"><input type="checkbox">Tools</label>
+            <label class="filter-opt"><input type="checkbox">Packs</label>
+          </div>
+        </div>
+        <div class="filter-section">
+          <div class="filter-title">In Stock</div>
+          <div class="filter-options">
+            <label class="filter-opt"><input type="checkbox" checked>In Stock (85)</label>
+            <label class="filter-opt"><input type="checkbox">Pre-Order (6)</label>
+          </div>
+        </div>
+        <div class="filter-section">
+          <div class="filter-title">Best Sellers</div>
+          <div class="filter-options">
+            <label class="filter-opt"><input type="checkbox">Top 10 Sellers</label>
+            <label class="filter-opt"><input type="checkbox">Staff Picks</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN GRID -->
+      <div class="shop-main">
+        <div class="active-filters">
+          <span class="filter-tag">Gel Polish ✕</span>
+        </div>
+        <div class="shop-toolbar">
+          <div class="shop-search"><span class="search-icon">🔍</span><input type="text" placeholder="Search products…"></div>
+          <div class="shop-toolbar-right">
+            <span class="results-count">Showing 24 of 91 products</span>
+            <select class="sort-select"><option>Sort by: Best Selling</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Newest</option><option>Top Rated</option></select>
+            <select class="sort-select" style="width:80px"><option>Show: 24</option><option>Show: 48</option></select>
+          </div>
+        </div>
+
+        <div class="products-grid-4">
+          <div class="product-card"><div class="pc-img" style="background:#f5f0ff">🧴<span class="pc-badge badge-black">BESTSELLER</span></div><div class="pc-body"><div class="pc-name">Acetone (100% Pure)</div><div class="pc-size">Gallon</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(324)</span></div><div class="pc-price">$24.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#fff0f4">🧤</div><div class="pc-body"><div class="pc-name">Nitrile Gloves Black</div><div class="pc-size">100 Count</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(198)</span></div><div class="pc-price">$6.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#f0f8ff">🪄</div><div class="pc-body"><div class="pc-name">Zebra Nail Files</div><div class="pc-size">100/180 — 50 Pack</div><div class="pc-stars"><span class="stars-row">★★★★☆</span><span class="review-ct">(87)</span></div><div class="pc-price">$7.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#fff8e1">🛁<span class="pc-badge badge-pink">NEW</span></div><div class="pc-body"><div class="pc-name">Pedicure Liners</div><div class="pc-size">125 Count</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(76)</span></div><div class="pc-price">$9.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#f0fff4">🧻</div><div class="pc-body"><div class="pc-name">Lint-Free Nail Wipes</div><div class="pc-size">900 Count</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(65)</span></div><div class="pc-price">$5.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#fce4ec">💅<span class="pc-badge badge-blush">SALE</span></div><div class="pc-body"><div class="pc-name">Buffers 100/180</div><div class="pc-size">10 Pack</div><div class="pc-stars"><span class="stars-row">★★★★☆</span><span class="review-ct">(42)</span></div><div class="pc-price">$4.99 <s>$7.99</s></div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#e8f5ff">🧴</div><div class="pc-body"><div class="pc-name">Gel Top Coat</div><div class="pc-size">15ml</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(159)</span></div><div class="pc-price">$8.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#fff3f0">✂️</div><div class="pc-body"><div class="pc-name">Cuticle Oil</div><div class="pc-size">15ml</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(93)</span></div><div class="pc-price">$5.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#f3e5f5">💜<span class="pc-badge badge-pink">NEW</span></div><div class="pc-body"><div class="pc-name">Cat Eye Gel Polish</div><div class="pc-size">10ml — Magnetic</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(112)</span></div><div class="pc-price">$11.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#f0fff4">🟤</div><div class="pc-body"><div class="pc-name">Isopropyl Alcohol 70%</div><div class="pc-size">Gallon</div><div class="pc-stars"><span class="stars-row">★★★★☆</span><span class="review-ct">(54)</span></div><div class="pc-price">$16.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#fce4ee">🌸<span class="pc-badge badge-pink">NEW</span></div><div class="pc-body"><div class="pc-name">Syrup Gel Korean</div><div class="pc-size">15ml — Jelly Finish</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(78)</span></div><div class="pc-price">$13.99</div><button class="pc-atc">Add to Cart</button></div></div>
+          <div class="product-card"><div class="pc-img" style="background:#e3f2fd">✨</div><div class="pc-body"><div class="pc-name">Chrome Powder Set</div><div class="pc-size">6 Colors</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(201)</span></div><div class="pc-price">$12.99</div><button class="pc-atc">Add to Cart</button></div></div>
+        </div>
+
+        <div class="pagination">
+          <button class="page-btn">←</button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn" style="width:auto;padding:0 12px">…</button>
+          <button class="page-btn">12</button>
+          <button class="page-btn">→</button>
+        </div>
+
+        <!-- RESTOCK BOTTOM BANNER -->
+        <div class="restock-bottom-banner">
+          <div class="rbb-left">
+            <h3>Need These <em>Every Month?</em></h3>
+            <p>Turn your cart into a monthly restock plan and save time every month.</p>
+          </div>
+          <a href="restock-plans.html" class="btn btn-pink btn-lg">Build My Restock Box →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div><div class="footer-brand-logo">Nail<em>HQ</em></div><span class="footer-brand-tag">Pro Salon Supply &amp; Delivery</span><p class="footer-desc">Your one-stop shop for professional salon supplies. Quality products, fast shipping, and support you can count on.</p><div class="footer-socials"><button class="social-btn">𝕏</button><button class="social-btn">f</button><button class="social-btn">▶</button><button class="social-btn">📸</button></div></div>
+    <div><div class="footer-col-hd">Shop</div><div class="footer-links"><a href="shop.html">All Products</a><a href="new-arrivals.html">New Arrivals</a><a href="shop.html">Best Sellers</a><a href="restock-plans.html">Restock Plans</a><a href="shop.html">Sale</a></div></div>
+    <div><div class="footer-col-hd">Customer Care</div><div class="footer-links"><a href="contact.html">Contact Us</a><a href="local-delivery.html">Shipping &amp; Delivery</a><a href="#">Returns &amp; Refunds</a><a href="#">FAQ</a></div></div>
+    <div><div class="footer-col-hd">Newsletter</div><p style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:4px">Sign up for exclusive offers and new arrivals.</p><div class="nl-input-row"><input type="email" class="nl-input" placeholder="Your email"><button class="nl-btn">Subscribe</button></div><div class="nl-note">No spam. Unsubscribe anytime.</div></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-copy">© 2024 Nail Supply HQ. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div><div class="pay-icons"><span class="pay-pill">VISA</span><span class="pay-pill">MC</span><span class="pay-pill">AMEX</span><span class="pay-pill">Apple Pay</span></div></div>
+</footer>
+</body>
+</html>

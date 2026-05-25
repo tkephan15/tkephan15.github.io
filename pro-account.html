@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Account – Nail Supply HQ</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.pro-hero{background:var(--black);padding:72px 0;position:relative;overflow:hidden}
+.pro-hero::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,128,.12) 0%,transparent 70%);pointer-events:none}
+.pro-hero-wrap{max-width:800px;margin:0 auto;text-align:center;padding:0 40px;position:relative;z-index:2}
+.pro-hero h1{font-size:48px;font-weight:900;letter-spacing:-2.5px;line-height:1.1;color:white;margin-bottom:14px}
+.pro-hero h1 span{color:var(--pink)}
+.pro-hero p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:28px}
+.benefits-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.benefit-card{background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:26px 20px;text-align:center;transition:all .2s}
+.benefit-card:hover{border-color:var(--pink);box-shadow:0 4px 24px rgba(255,0,128,.1);transform:translateY(-3px)}
+.benefit-icon{font-size:32px;margin-bottom:12px}
+.benefit-title{font-size:13px;font-weight:700;margin-bottom:5px}
+.benefit-desc{font-size:11.5px;color:var(--gray-text);line-height:1.6}
+.form-section{background:var(--gray-100)}
+.form-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--gray-200);padding:40px 48px;max-width:760px;margin:0 auto}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-section-title{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-text);margin:24px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--gray-200)}
+.radio-group{display:flex;gap:20px}
+.radio-opt{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer}
+.radio-opt input{accent-color:var(--pink)}
+.checkbox-group{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;line-height:1.5;color:#555}
+.checkbox-group input{accent-color:var(--pink);margin-top:2px}
+</style>
+</head>
+<body>
+<div class="announce-bar">🚚 Free local delivery on orders $100+<span>|</span>Professional salon supplies<span>|</span>Easy monthly restock</div>
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="logo"><div class="logo-mark">Nail<em>HQ</em></div><div class="logo-tag">Pro Salon Supply &amp; Delivery</div></a>
+    <nav class="main-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="restock-plans.html">Restock Plans</a><a href="pro-account.html" class="active">Pro Account</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div class="header-right"><button class="icon-btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg></button><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button><div class="cart-wrap"><button class="icon-btn"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button><span class="cart-badge">3</span></div></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="pro-hero">
+  <div class="pro-hero-wrap">
+    <div class="sec-label" style="color:var(--pink)">For Salon Owners</div>
+    <h1>Nail Supply HQ<br><span>Pro Account</span></h1>
+    <p>Built for salon owners, managers, and professional nail techs who want easier ordering, better service, and reliable restocking.</p>
+    <a href="#apply" class="btn btn-pink btn-lg">Apply Now →</a>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="padded">
+  <div class="page-wrap">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-label">Pro Account Benefits</div>
+      <h2 class="sec-title">Everything a <span>Pro Needs</span></h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card"><div class="benefit-icon">💰</div><div class="benefit-title">Pro Pricing</div><div class="benefit-desc">Access salon-focused discounts across our entire catalog</div></div>
+      <div class="benefit-card"><div class="benefit-icon">⚡</div><div class="benefit-title">Speed Orders</div><div class="benefit-desc">Receive products faster — dedicated order processing for pros</div></div>
+      <div class="benefit-card"><div class="benefit-icon">🚚</div><div class="benefit-title">Local Delivery</div><div class="benefit-desc">Free local delivery delivered directly to your salon door</div></div>
+      <div class="benefit-card"><div class="benefit-icon">🔔</div><div class="benefit-title">Restock Reminders</div><div class="benefit-desc">Automatic alerts before you run out of your staple products</div></div>
+      <div class="benefit-card"><div class="benefit-icon">🎯</div><div class="benefit-title">Custom Sourcing</div><div class="benefit-desc">Request products you want us to carry — we'll find them for you</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="padded form-section" id="apply">
+  <div class="page-wrap">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sec-label">Pro Account Application</div>
+      <h2 class="sec-title">Apply in <span>Under 2 Minutes</span></h2>
+      <p class="sec-sub">Tell us about your salon and we'll review your application within 24 hours.</p>
+    </div>
+    <div class="form-card">
+      <div class="form-section-title">Salon Information</div>
+      <div class="form-grid-2">
+        <div class="form-group"><label class="form-label">Salon Name *</label><input type="text" class="form-input" placeholder="e.g. Luxe Nail Studio"></div>
+        <div class="form-group"><label class="form-label">Owner / Manager Name *</label><input type="text" class="form-input" placeholder="Full name"></div>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-input" placeholder="you@yoursalon.com"></div>
+        <div class="form-group"><label class="form-label">Phone Number *</label><input type="tel" class="form-input" placeholder="(555) 000-0000"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Salon Address *</label><input type="text" class="form-input" placeholder="Street address"></div>
+      <div class="form-grid-2">
+        <div class="form-group"><label class="form-label">City</label><input type="text" class="form-input" placeholder="Austin"></div>
+        <div class="form-group"><label class="form-label">State / Zip Code</label><input type="text" class="form-input" placeholder="TX  78701"></div>
+      </div>
+
+      <div class="form-section-title">Your Salon Needs</div>
+      <div class="form-grid-2">
+        <div class="form-group"><label class="form-label">Number of Nail Techs</label><select class="form-select"><option value="">Select...</option><option>1 (Solo)</option><option>2–3</option><option>4–6</option><option>7–10</option><option>10+</option></select></div>
+        <div class="form-group"><label class="form-label">Monthly Supply Spend (approx.)</label><select class="form-select"><option value="">Select...</option><option>Under $100</option><option>$100 – $250</option><option>$250 – $500</option><option>$500 – $1,000</option><option>$1,000+</option></select></div>
+      </div>
+      <div class="form-group"><label class="form-label">Supplies You Use Monthly</label><textarea class="form-textarea" placeholder="e.g. acetone gallon x2, nitrile gloves x3 boxes, nail files, lint-free wipes…"></textarea></div>
+
+      <div class="form-section-title">Preferences</div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label">Interested in Monthly Restock?</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="restock" value="yes"> Yes</label>
+            <label class="radio-opt"><input type="radio" name="restock" value="no"> No</label>
+            <label class="radio-opt"><input type="radio" name="restock" value="maybe"> Maybe later</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Local Delivery Needed?</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="delivery" value="yes"> Yes</label>
+            <label class="radio-opt"><input type="radio" name="delivery" value="no"> No</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="margin-top:8px">
+        <label class="checkbox-group"><input type="checkbox"> I agree to the Nail Supply HQ Pro Account terms and conditions. I understand my application will be reviewed within 24 hours.</label>
+      </div>
+      <div style="margin-top:24px;text-align:center">
+        <button class="btn btn-pink" style="padding:15px 48px;font-size:14px">Submit Application →</button>
+        <p style="font-size:11px;color:var(--gray-text);margin-top:10px">We'll review your application and get back to you within 24 business hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div><div class="footer-brand-logo">Nail<em>HQ</em></div><span class="footer-brand-tag">Pro Salon Supply &amp; Delivery</span><p class="footer-desc">Your one-stop shop for professional salon supplies.</p><div class="footer-socials"><button class="social-btn">𝕏</button><button class="social-btn">f</button><button class="social-btn">▶</button><button class="social-btn">📸</button></div></div>
+    <div><div class="footer-col-hd">Shop</div><div class="footer-links"><a href="shop.html">All Products</a><a href="new-arrivals.html">New Arrivals</a><a href="shop.html">Best Sellers</a><a href="restock-plans.html">Restock Plans</a></div></div>
+    <div><div class="footer-col-hd">Customer Care</div><div class="footer-links"><a href="contact.html">Contact Us</a><a href="local-delivery.html">Delivery</a><a href="#">Returns</a><a href="#">FAQ</a></div></div>
+    <div><div class="footer-col-hd">Newsletter</div><div class="nl-input-row"><input type="email" class="nl-input" placeholder="Your email"><button class="nl-btn">Subscribe</button></div><div class="nl-note">No spam. Unsubscribe anytime.</div></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-copy">© 2024 Nail Supply HQ. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div><div class="pay-icons"><span class="pay-pill">VISA</span><span class="pay-pill">MC</span><span class="pay-pill">AMEX</span><span class="pay-pill">Apple Pay</span></div></div>
+</footer>
+</body>
+</html>

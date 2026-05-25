@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nail Supply HQ – Pro Salon Supply & Delivery</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* HERO */
+.hero{background:linear-gradient(140deg,#fff5f9 0%,#fff0f5 60%,#fce4ee 100%);overflow:hidden;position:relative}
+.hero::after{content:'';position:absolute;right:-200px;top:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,128,.05) 0%,transparent 70%);pointer-events:none}
+.hero-wrap{max-width:1360px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:560px;gap:60px}
+.hero-content{padding:60px 0;position:relative;z-index:2}
+.hero-tag{display:inline-block;background:rgba(255,0,128,.1);color:var(--pink);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 14px;border-radius:3px;margin-bottom:18px}
+.hero h1{font-size:54px;font-weight:900;line-height:1.05;letter-spacing:-2.5px;margin-bottom:6px}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{font-size:15px;color:#555;line-height:1.75;margin:16px 0 32px;max-width:490px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-btns .btn{font-size:14px;padding:14px 30px}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:flex-end;padding:40px 0}
+.hero-circle{width:440px;height:440px;border-radius:50%;background:white;box-shadow:0 24px 80px rgba(255,0,128,.14);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;padding:32px;position:relative;z-index:2}
+.h-prod{background:var(--blush);border-radius:10px;padding:16px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.h-prod-emoji{font-size:30px}
+.h-prod-name{font-size:10px;font-weight:600;color:var(--black);line-height:1.3}
+.h-prod-price{font-size:12px;font-weight:800;color:var(--pink)}
+.hero-float1{position:absolute;top:32px;right:-12px;background:var(--pink);color:white;font-size:11px;font-weight:700;padding:9px 18px;border-radius:22px;box-shadow:var(--shadow-pink);z-index:3;white-space:nowrap}
+.hero-float2{position:absolute;bottom:72px;left:-18px;background:white;border:1px solid var(--gray-200);font-size:11px;font-weight:600;padding:10px 16px;border-radius:12px;box-shadow:var(--shadow-md);z-index:3;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.float2-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0}
+
+/* CATS */
+.cats-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:14px}
+.cat-tile{text-align:center;cursor:pointer}
+.cat-tile:hover .cat-img-wrap{transform:translateY(-4px);border-color:var(--pink)}
+.cat-img-wrap{width:80px;height:80px;border-radius:50%;background:var(--blush);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:28px;border:2px solid transparent;transition:all .2s;position:relative;overflow:hidden}
+.cat-img-wrap.new-cat::after{content:'NEW';position:absolute;bottom:0;left:0;right:0;background:var(--pink);color:white;font-size:7px;font-weight:700;letter-spacing:1px;padding:3px 0;text-align:center}
+.cat-name{font-size:11px;font-weight:600;line-height:1.3}
+
+/* RESTOCK PROMO */
+.restock-band{background:var(--black);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 420px}
+.rb-content{padding:54px 52px;display:flex;flex-direction:column;justify-content:center}
+.rb-tag{display:inline-block;background:rgba(255,0,128,.18);color:var(--pink);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 12px;border-radius:3px;margin-bottom:14px;width:fit-content}
+.rb-content h2{font-size:40px;font-weight:900;letter-spacing:-2px;color:white;line-height:1.1;margin-bottom:12px}
+.rb-content h2 em{font-style:normal;color:var(--pink)}
+.rb-content p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:24px;max-width:400px}
+.rb-feats{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.rb-feat{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.75)}
+.rb-feat-dot{width:5px;height:5px;border-radius:50%;background:var(--pink);flex-shrink:0}
+.rb-visual{background:linear-gradient(135deg,#1a080f,#280d1a);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.rb-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(255,0,128,.22),transparent 60%)}
+.rb-box{width:220px;height:180px;background:linear-gradient(135deg,var(--pink),#ff4da6);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:0 32px 64px rgba(255,0,128,.45);position:relative;z-index:2}
+.rb-box-emoji{font-size:46px}
+.rb-box-label{font-size:13px;font-weight:700;color:white;letter-spacing:.5px}
+.rb-box-sub{font-size:10px;color:rgba(255,255,255,.75)}
+
+/* HIW */
+.hiw-bg{background:var(--gray-100)}
+.hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.hiw-card{background:white;border-radius:var(--radius-lg);padding:28px 22px;border:1px solid var(--gray-200)}
+.hiw-num{width:34px;height:34px;border-radius:50%;background:var(--pink);color:white;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.hiw-emoji{font-size:26px;margin-bottom:8px}
+.hiw-title{font-size:13.5px;font-weight:700;margin-bottom:5px}
+.hiw-desc{font-size:12px;color:var(--gray-text);line-height:1.65}
+
+/* PRODUCTS GRID */
+.products-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.products-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* PRO CTA */
+.pro-cta-section{background:linear-gradient(135deg,#fff5f9,#fce4ee)}
+.pro-cta-wrap{display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:center}
+.pro-benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 28px}
+.pro-benefit-item{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;line-height:1.5}
+.pbi-check{color:var(--pink);font-weight:700;flex-shrink:0;margin-top:1px;font-size:14px}
+.pro-mock{background:white;border-radius:22px;box-shadow:0 20px 60px rgba(255,0,128,.14);padding:28px}
+.pm-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.pm-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--pink),#ff4da6);color:white;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-name{font-size:14px;font-weight:700}
+.pm-role{font-size:11px;color:var(--gray-text)}
+.pm-badge{display:inline-block;background:linear-gradient(135deg,var(--pink),#ff4da6);color:white;font-size:9px;font-weight:700;padding:3px 12px;border-radius:12px;letter-spacing:1px;margin-bottom:16px}
+.pm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pm-stat{background:var(--blush);border-radius:8px;padding:11px 6px;text-align:center}
+.pm-stat-n{font-size:20px;font-weight:900;color:var(--pink)}
+.pm-stat-l{font-size:9px;font-weight:500;color:var(--gray-text);margin-top:1px}
+
+/* TRUSTED LOGOS */
+.trusted-bar{background:var(--gray-100);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:20px 0}
+.trusted-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:16px}
+.trusted-label{font-size:11px;font-weight:700;color:var(--gray-400);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;margin-right:16px}
+.salon-logos{display:flex;gap:32px;flex:1;align-items:center}
+.salon-logo{font-size:13px;font-weight:700;color:var(--gray-400);letter-spacing:1px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="announce-bar">🚚 Free local delivery on orders $100+<span>|</span>Professional salon supplies<span>|</span>Easy monthly restock</div>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">Nail<em>HQ</em></div>
+      <div class="logo-tag">Pro Salon Supply &amp; Delivery</div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="restock-plans.html">Restock Plans</a>
+      <a href="pro-account.html">Pro Account</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+      <button class="icon-btn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg></button>
+      <button class="icon-btn" aria-label="Account"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <div class="cart-wrap">
+        <button class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+        <span class="cart-badge">3</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="hero-content">
+      <span class="hero-tag">Professional Nail Supplies</span>
+      <h1>Everything Your<br>Salon Needs.<br><em>All In One Place.</em></h1>
+      <p>Professional nail supplies for salons and nail techs. Shop daily essentials, trending products, and monthly restock items without the supply run.</p>
+      <div class="hero-btns">
+        <a href="shop.html" class="btn btn-pink btn-lg">Shop Now →</a>
+        <a href="restock-plans.html" class="btn btn-outline-black btn-lg">Build a Restock Box</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle">
+        <div class="h-prod"><div class="h-prod-emoji">🧴</div><div class="h-prod-name">Acrylic Liquid</div><div class="h-prod-price">$24.99</div></div>
+        <div class="h-prod"><div class="h-prod-emoji">💅</div><div class="h-prod-name">Gel Polish</div><div class="h-prod-price">$12.99</div></div>
+        <div class="h-prod"><div class="h-prod-emoji">🧤</div><div class="h-prod-name">Nitrile Gloves</div><div class="h-prod-price">$6.99</div></div>
+        <div class="h-prod"><div class="h-prod-emoji">🪄</div><div class="h-prod-name">Nail Files</div><div class="h-prod-price">$7.99</div></div>
+      </div>
+      <div class="hero-float1">🚚 Same-Day Delivery Available</div>
+      <div class="hero-float2"><span class="float2-dot"></span>500+ Salons Restocked This Month</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><div class="trust-icon-wrap">✅</div><div><div class="trust-title">Professional Quality</div><div class="trust-sub">Products you can trust</div></div></div>
+    <div class="trust-item"><div class="trust-icon-wrap">🚚</div><div><div class="trust-title">Fast Local Delivery</div><div class="trust-sub">Same-day in select areas</div></div></div>
+    <div class="trust-item"><div class="trust-icon-wrap">🔄</div><div><div class="trust-title">Easy Reorder</div><div class="trust-sub">Restock in seconds</div></div></div>
+    <div class="trust-item"><div class="trust-icon-wrap">⭐</div><div><div class="trust-title">Salon Rewards</div><div class="trust-sub">Earn points every order</div></div></div>
+  </div>
+</div>
+
+<!-- TRUSTED SALONS -->
+<div class="trusted-bar">
+  <div class="trusted-inner">
+    <span class="trusted-label">Trusted By</span>
+    <div class="salon-logos">
+      <span class="salon-logo">Luxe Nails</span>
+      <span class="salon-logo">Venus Studio</span>
+      <span class="salon-logo">Hello Nails</span>
+      <span class="salon-logo">The Nail Lounge</span>
+      <span class="salon-logo">Nail Society</span>
+      <span class="salon-logo">Polished Studio</span>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="padded">
+  <div class="page-wrap">
+    <div class="sec-head-row">
+      <div>
+        <div class="sec-label">Browse</div>
+        <h2 class="sec-title">Shop by <span>Category</span></h2>
+        <p class="sec-sub">Everything your salon needs, organized for you</p>
+      </div>
+      <a href="shop.html" class="link-arrow">View All Categories →</a>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#fce4ee">💅</div><div class="cat-name">Gel Polish</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#f0e8ff">🧴</div><div class="cat-name">Acrylic Systems</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#e8f5e8">🔧</div><div class="cat-name">Nail Tools</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#fff3e0">🧪</div><div class="cat-name">Liquids &amp; Chemicals</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#e3f2fd">🧤</div><div class="cat-name">Disposables</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#fce4ec">🦶</div><div class="cat-name">Pedicure Supplies</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap" style="background:#f3e5f5">🎨</div><div class="cat-name">Nail Art</div></div>
+      <div class="cat-tile"><div class="cat-img-wrap new-cat" style="background:#e8f5e8">✨</div><div class="cat-name">New Arrivals</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTOCK PROMO -->
+<section style="padding:0 0 72px">
+  <div class="page-wrap">
+    <div class="restock-band">
+      <div class="rb-content">
+        <span class="rb-tag">Never Run Out Again</span>
+        <h2>Salon Restock<br><em>Plans</em></h2>
+        <p>Set up a monthly restock plan for the supplies your salon uses every week. Choose once, and we handle the rest — delivered on time, every time.</p>
+        <div class="rb-feats">
+          <div class="rb-feat"><span class="rb-feat-dot"></span>Choose your supplies once</div>
+          <div class="rb-feat"><span class="rb-feat-dot"></span>Order one-time or subscribe monthly</div>
+          <div class="rb-feat"><span class="rb-feat-dot"></span>We pack &amp; deliver to your salon</div>
+          <div class="rb-feat"><span class="rb-feat-dot"></span>Reorder in seconds anytime</div>
+        </div>
+        <a href="restock-plans.html" class="btn btn-pink" style="width:fit-content;padding:14px 32px">View Restock Plans →</a>
+      </div>
+      <div class="rb-visual">
+        <div class="rb-box">
+          <div class="rb-box-emoji">📦</div>
+          <div class="rb-box-label">NAIL SUPPLY HQ</div>
+          <div class="rb-box-sub">Thank you, Professional ♥</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="padded hiw-bg">
+  <div class="page-wrap">
+    <div class="sec-head-row">
+      <div>
+        <div class="sec-label">Simple Process</div>
+        <h2 class="sec-title">How It <span>Works</span></h2>
+        <p class="sec-sub">Restocking your salon has never been simpler</p>
+      </div>
+    </div>
+    <div class="hiw-grid">
+      <div class="hiw-card"><div class="hiw-num">1</div><div class="hiw-emoji">🛒</div><div class="hiw-title">Choose Your Supplies</div><div class="hiw-desc">Browse our full professional catalog and add salon essentials to your cart or restock box.</div></div>
+      <div class="hiw-card"><div class="hiw-num">2</div><div class="hiw-emoji">📅</div><div class="hiw-title">Pick One-Time or Recurring</div><div class="hiw-desc">Order once or subscribe to monthly delivery. Change or pause your plan anytime from your account.</div></div>
+      <div class="hiw-card"><div class="hiw-num">3</div><div class="hiw-emoji">📦</div><div class="hiw-title">We Pack &amp; Deliver</div><div class="hiw-desc">Your order is packed and delivered fast. Same-day and next-day delivery available in select areas.</div></div>
+      <div class="hiw-card"><div class="hiw-num">4</div><div class="hiw-emoji">⚡</div><div class="hiw-title">Reorder in Seconds</div><div class="hiw-desc">Running low? Reorder favorites with one click from your order history or restock dashboard.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="padded">
+  <div class="page-wrap">
+    <div class="sec-head-row">
+      <div>
+        <div class="sec-label">Top Picks</div>
+        <h2 class="sec-title">Best <span>Sellers</span></h2>
+        <p class="sec-sub">What salons are ordering most right now</p>
+      </div>
+      <a href="shop.html" class="link-arrow">View All →</a>
+    </div>
+    <div class="products-grid-5">
+      <div class="product-card"><div class="pc-img" style="background:#f5f0ff">🧴<span class="pc-badge badge-black">BESTSELLER</span></div><div class="pc-body"><div class="pc-name">Acetone (100% Pure)</div><div class="pc-size">Gallon — 128 fl oz</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(324)</span></div><div class="pc-price">$24.99</div><button class="pc-atc">Add to Cart</button></div></div>
+      <div class="product-card"><div class="pc-img" style="background:#fff0f4">🧤</div><div class="pc-body"><div class="pc-name">Nitrile Gloves Black</div><div class="pc-size">100 Count</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(198)</span></div><div class="pc-price">$6.99</div><button class="pc-atc">Add to Cart</button></div></div>
+      <div class="product-card"><div class="pc-img" style="background:#f0f8ff">🪄</div><div class="pc-body"><div class="pc-name">Zebra Nail Files</div><div class="pc-size">100/180 — 50 Pack</div><div class="pc-stars"><span class="stars-row">★★★★☆</span><span class="review-ct">(87)</span></div><div class="pc-price">$7.99</div><button class="pc-atc">Add to Cart</button></div></div>
+      <div class="product-card"><div class="pc-img" style="background:#fff8e1">🛁<span class="pc-badge badge-pink">NEW</span></div><div class="pc-body"><div class="pc-name">Pedicure Liners</div><div class="pc-size">125 Count</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(76)</span></div><div class="pc-price">$9.99</div><button class="pc-atc">Add to Cart</button></div></div>
+      <div class="product-card"><div class="pc-img" style="background:#f0fff4">🧻</div><div class="pc-body"><div class="pc-name">Lint-Free Nail Wipes</div><div class="pc-size">900 Count</div><div class="pc-stars"><span class="stars-row">★★★★★</span><span class="review-ct">(65)</span></div><div class="pc-price">$5.99 <s>$8.99</s></div><button class="pc-atc">Add to Cart</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRO CTA -->
+<section class="padded pro-cta-section">
+  <div class="page-wrap">
+    <div class="pro-cta-wrap">
+      <div>
+        <div class="sec-label">For Salon Owners</div>
+        <h2 class="sec-title">Own or Manage <span>a Salon?</span></h2>
+        <p class="sec-sub" style="margin-bottom:0">Create a Pro Account for easy reordering, special pricing, restock reminders, local delivery, and monthly supply planning.</p>
+        <div class="pro-benefits-grid">
+          <div class="pro-benefit-item"><span class="pbi-check">✦</span><span>Pro pricing on all products</span></div>
+          <div class="pro-benefit-item"><span class="pbi-check">✦</span><span>Speed orders — skip the queue</span></div>
+          <div class="pro-benefit-item"><span class="pbi-check">✦</span><span>Free local delivery always</span></div>
+          <div class="pro-benefit-item"><span class="pbi-check">✦</span><span>Restock reminders</span></div>
+          <div class="pro-benefit-item"><span class="pbi-check">✦</span><span>Custom sourcing requests</span></div>
+          <div class="pro-benefit-item"><span class="pbi-check">✦</span><span>Monthly supply planning</span></div>
+        </div>
+        <a href="pro-account.html" class="btn btn-pink btn-lg">Apply for Pro Account →</a>
+      </div>
+      <div class="pro-mock">
+        <div class="pm-head"><div class="pm-avatar">JL</div><div><div class="pm-name">Jenny Lee</div><div class="pm-role">Luxe Nail Studio · Austin TX</div></div></div>
+        <div class="pm-badge">PRO ACCOUNT ✦</div>
+        <div class="pm-stats">
+          <div class="pm-stat"><div class="pm-stat-n">320</div><div class="pm-stat-l">Points</div></div>
+          <div class="pm-stat"><div class="pm-stat-n">$156</div><div class="pm-stat-l">Saved</div></div>
+          <div class="pm-stat"><div class="pm-stat-n">2</div><div class="pm-stat-l">Plans</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <div class="footer-brand-logo">Nail<em>HQ</em></div>
+      <span class="footer-brand-tag">Pro Salon Supply &amp; Delivery</span>
+      <p class="footer-desc">Your one-stop shop for professional salon supplies. Quality products, fast shipping, and support you can count on. Austin, Texas.</p>
+      <div class="footer-socials">
+        <button class="social-btn">𝕏</button>
+        <button class="social-btn">f</button>
+        <button class="social-btn">▶</button>
+        <button class="social-btn">📸</button>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-hd">Shop</div>
+      <div class="footer-links">
+        <a href="shop.html">All Products</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="shop.html">Best Sellers</a>
+        <a href="restock-plans.html">Restock Plans</a>
+        <a href="shop.html">Sale</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-hd">Customer Care</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact Us</a>
+        <a href="local-delivery.html">Shipping &amp; Delivery</a>
+        <a href="#">Returns &amp; Refunds</a>
+        <a href="#">FAQ</a>
+        <a href="#">Wholesale Inquiry</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-hd">Newsletter</div>
+      <p style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:4px">Sign up for exclusive offers, new arrivals &amp; more.</p>
+      <div class="nl-input-row"><input type="email" class="nl-input" placeholder="Your email address"><button class="nl-btn">Subscribe</button></div>
+      <div class="nl-note">No spam. Unsubscribe anytime.</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-copy">© 2024 Nail Supply HQ. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Wholesale</a></div>
+    <div class="pay-icons"><span class="pay-pill">VISA</span><span class="pay-pill">MC</span><span class="pay-pill">AMEX</span><span class="pay-pill">Apple Pay</span></div>
+  </div>
+</footer>
+</body>
+</html>
